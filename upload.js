@@ -25,8 +25,10 @@ let uploadFiles = multer({
 }).array('files');
 
 let upload = util.promisify(uploadFile);
+let uploads = util.promisify(uploadFiles);
+
 module.exports = {
-  uploadFile: uploadFile,
-  uploadFiles: uploadFiles
+  uploadFile: upload,
+  uploadFiles: uploads
 }
 
